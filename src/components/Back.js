@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({ id, name}) => (
+const Back = ({ name }) => (
   <div>
     <div>
       {name}
@@ -8,4 +8,4 @@ const Card = ({ id, name}) => (
   </div>
 )
 
-export default Card;
+export default Back;

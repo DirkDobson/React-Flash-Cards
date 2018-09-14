@@ -13,8 +13,8 @@ class Form extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-
-    this.props.addCard(this.state.name)
+    this.props.addBack(this.state.front)
+    this.props.addFront(this.state.back)
     this.setState({ front: '', back: '' })
   }
 
@@ -36,7 +36,7 @@ class Form extends Component {
       onChange={this.handleChangeBack}
       />
 
-      <button onSubmit={this.handleSubmit} type="submit">Send Card</button>
+      <button onSubmit={this.handleSubmit} type="submit">Add Card</button>
       </form>
     )
   }

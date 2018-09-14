@@ -1,33 +1,55 @@
 import React, { Component } from 'react';
 import Form from './components/Form';
-import Card from './components/Card';
+import Front from './components/Front';
+import Back from './components/Back';
 import './App.css';
 
+// { front: "", back: ""}
 class App extends Component {
-  state = {cards: [] }
+  state = { fronts: [], backs: [] }
 
-  addCard = (name) => {
-    const card = { name }
-    const { cards } = this.state;
-    this.setState({ cards: [...cards, card] })
+  addFront = (name) => {
+    const front = { name }
+    const { fronts } = this.state;
+    this.setState({ fronts: [...fronts, front] })
   }
 
-  cardList = () => {
-    return this.state.cards.map(card => {
+  addBack = (name) => {
+    const back = { name }
+    const { backs } = this.state;
+    this.setState({ backs: [...backs, back] })
+  }
+
+  Front = () => {
+    return this.state.fronts.map(front => {
       return (
         <div>
-          <Card 
-          {...card}
+          <Front 
+            {...front}
           />
         </div>
       )
-    })
+    })  
+  }
+
+  Back = () => {
+    return this.state.backs.map(back => {
+      return (
+        <div>
+          <Back 
+          {...back}
+          />
+        </div>
+      )
+    })  
   }
   render() {
     return (
       <div>
         <div>
-          <Form addCard={this.addCard}/>
+          <Form addFront={this.addFront} addBack={this.addBack}/>
+          {this.Front()}
+          {this.Back()}
         </div>
       </div>
     );
