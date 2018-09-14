@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Form from './components/Form';
+import Card from './components/Card';
 import './App.css';
 
 class App extends Component {
+  state = {cards: [] }
+
+  addCard = (name) => {
+    const card = { name }
+    const { cards } = this.state;
+    this.setState({ cards: [...cards, card] })
+  }
+
+  cardList = () => {
+    return this.state.cards.map(card => {
+      return (
+        <div>
+          <Card 
+          {...card}
+          />
+        </div>
+      )
+    })
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <div>
+          <Form addCard={this.addCard}/>
+        </div>
       </div>
     );
   }
