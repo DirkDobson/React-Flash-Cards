@@ -6,5 +6,6 @@
 
 .cards {
   display: flex;
-  align-self: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
 }

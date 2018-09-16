@@ -55,13 +55,13 @@ class App extends Component {
           <Form addFront={this.addFront} addBack={this.addBack}/>
           <div className="cards">
           <div className="column">
+          {this.Front()}
+          </div>
+          <div className="column">
           {showBack && this.Back()}
           <button onClick={this.toggleShowBack}>
           { showBack ? 'Hide' : 'Show'}
           </button>
-          </div>
-          <div className="column">
-          {this.Front()}
           </div>
           </div>
         </div>

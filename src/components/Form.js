@@ -27,13 +27,13 @@ class Form extends Component {
       placeholder='Front'
       required
       front={this.state.name}
-      onChange={this.handleChangeFront}
+      onChange={this.handleChangeBack}
       />
       <input 
       placeholder='Back'
       required
       back={this.state.name}
-      onChange={this.handleChangeBack}
+      onChange={this.handleChangeFront}
       />
 
       <button onSubmit={this.handleSubmit} type="submit">Add Card</button>
