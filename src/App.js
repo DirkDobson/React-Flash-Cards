@@ -48,8 +48,14 @@ class App extends Component {
       <div>
         <div>
           <Form addFront={this.addFront} addBack={this.addBack}/>
-          {this.Front()}
+          <div className="cards">
+          <div className="row">
           {this.Back()}
+          </div>
+          <div className="row">
+          {this.Front()}
+          </div>
+          </div>
         </div>
       </div>
     );

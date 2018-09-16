@@ -8,4 +8,4 @@ const Back = ({ name }) => (
   </div>
 )
 
-export default Back;
+export default Back
