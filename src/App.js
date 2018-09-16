@@ -6,7 +6,11 @@ import './App.css';
 
 // { front: "", back: ""}
 class App extends Component {
-  state = { fronts: [], backs: [] }
+  state = { fronts: [], backs: [], showBack: false }
+
+  toggleShowBack = () => {
+    this.setState({ showBack: !this.state.showBack})
+  }
 
   addFront = (name) => {
     const front = { name }
@@ -44,13 +48,17 @@ class App extends Component {
     })  
   }
   render() {
+    const { showBack } = this.state
     return (
       <div>
         <div>
           <Form addFront={this.addFront} addBack={this.addBack}/>
           <div className="cards">
           <div className="column">
-          {this.Back()}
+          {showBack && this.Back()}
+          <button onClick={this.toggleShowBack}>
+          { showBack ? 'Hide' : 'Show'}
+          </button>
           </div>
           <div className="column">
           {this.Front()}
