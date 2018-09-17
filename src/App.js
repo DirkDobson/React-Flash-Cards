@@ -6,7 +6,7 @@ import './App.css';
 
 // { front: "", back: ""}
 class App extends Component {
-  state = { fronts: [], backs: [], showBack: false }
+  state = { fronts: [], backs: [], showBack: false}
 
   toggleShowBack = () => {
     this.setState({ showBack: !this.state.showBack})
@@ -47,6 +47,22 @@ class App extends Component {
       )
     })  
   }
+
+  // deleteCard = () => {
+  //   const { fronts, backs} = this.state;
+  //   this.setState({fronts: fronts.filter(t => t.idf !==idf )})
+  //   this.setState({backs: backs.filter(t => t.idu !==idu )})
+  // }
+  // cardList = () => {
+  //   const { fronts, backs} = this.state;
+  //   for( let i = 0; i <fronts.length; i++ )
+  //   idf = fronts[i]
+  //   for( let u = 0; u <backs.length; u++ )
+  //   idu = backs[u]
+  // }
+  
+
+  
   render() {
     const { showBack } = this.state
     return (
@@ -62,6 +78,7 @@ class App extends Component {
           <button onClick={this.toggleShowBack}>
           { showBack ? 'Hide' : 'Show'}
           </button>
+          <button onClick={this.deleteCard}>Delete Card</button>
           </div>
           </div>
         </div>

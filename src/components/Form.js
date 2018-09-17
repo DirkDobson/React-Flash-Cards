@@ -17,7 +17,7 @@ class Form extends Component {
     this.props.addFront(this.state.back)
     this.setState({ front: '', back: '' })
   }
-
+  
 
 
   render() {
